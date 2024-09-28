@@ -3,18 +3,6 @@ plugins {
     id 'maven-publish'
 }
 
-afterEvaluate {
-    android.libraryVariants.each {variant->
-        publishing.publications.create(variant.name,MavenPublication){
-            from components.findByName(variant.name)
-            groupId = 'com.github'//自定义
-            artifactId = 'arison'//自定义
-            version = '1.0.0'//自定义
-        }
-    }
-}
-
-
 android {
     namespace 'com.github.arison'
     compileSdk 34
@@ -48,3 +36,19 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
+
+
+
+
+afterEvaluate {
+    android.libraryVariants.each {variant->
+        publishing.publications.create(variant.name,MavenPublication){
+            from components.findByName(variant.name)
+            groupId = 'com.github'
+            artifactId = 'arison'
+            version = '1.0.2'
+        }
+    }
+}
+
+
