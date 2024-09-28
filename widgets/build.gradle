@@ -52,15 +52,10 @@ afterEvaluate {
                 classifier = variant.name // 生成 aar 时区分 release 和 debug
             }
             //artifact("$buildDir/outputs/aar/${project.name}-release.aar")
-
-            repositories {
-                // JitPack 的 Maven 仓库
-                maven {
-                    url "https://jitpack.io"
-                }
-            }
         }
+
     }
+
 }
 
 //publishing {
