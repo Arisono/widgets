@@ -46,7 +46,7 @@ afterEvaluate {
             from components.findByName(variant.name)
             groupId = 'com.github'
             artifactId = 'arison'
-            version = '1.0.5.2'
+            version = '1.0.5.4'
             // 从变体中发布 .aar 文件
 //            artifact(variant.packageLibraryProvider.get().archiveFile) {
 //                classifier = variant.name // 生成 aar 时区分 release 和 debug
