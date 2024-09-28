@@ -46,9 +46,43 @@ afterEvaluate {
             from components.findByName(variant.name)
             groupId = 'com.github'
             artifactId = 'arison'
-            version = '1.0.2'
+            version = '1.0.3'
+            // 从变体中发布 .aar 文件
+            artifact(variant.packageLibraryProvider.get().archiveFile) {
+                classifier = variant.name // 生成 aar 时区分 release 和 debug
+            }
+            //artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+
+            repositories {
+                // JitPack 的 Maven 仓库
+                maven {
+                    url "https://jitpack.io"
+                }
+            }
         }
     }
 }
+
+//publishing {
+//    publications {
+//        // 配置用于发布的 aar
+//        release(MavenPublication) {
+//            from components.release
+//            groupId = 'com.github'
+//            artifactId = 'arison'
+//            version = '1.0.2'
+//
+//            // 发布 .aar 文件
+//            artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+//        }
+//    }
+//
+//    repositories {
+//        // 这是 JitPack 的发布配置
+//        maven {
+//            url "https://jitpack.io"
+//        }
+//    }
+//}
 
 
