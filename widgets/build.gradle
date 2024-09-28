@@ -48,9 +48,9 @@ afterEvaluate {
             artifactId = 'arison'
             version = '1.0.5.2'
             // 从变体中发布 .aar 文件
-            artifact(variant.packageLibraryProvider.get().archiveFile) {
-                classifier = variant.name // 生成 aar 时区分 release 和 debug
-            }
+//            artifact(variant.packageLibraryProvider.get().archiveFile) {
+//                classifier = variant.name // 生成 aar 时区分 release 和 debug
+//            }
             //artifact("$buildDir/outputs/aar/${project.name}-release.aar")
         }
 
